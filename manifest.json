@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Save Media Shortcut",
+  "version": "1.0",
+  "description": "Salva a mídia da URL atual com um atalho de teclado.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png"
+    },
+    "default_title": "Salvar Mídia"
+  },
+  "permissions": ["downloads", "activeTab", "commands", "notifications"],
+  "host_permissions": ["https://*.instagram.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "save-media": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+S",
+        "mac": "Command+Shift+S"
+      },
+      "description": "Salvar mídia da URL atual"
+    }
+  }
+}
